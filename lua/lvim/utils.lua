@@ -19,7 +19,7 @@ local function r_inspect_settings(structure, limit, separator)
     for k, v in pairs(structure) do
       -- replace non alpha keys with ["key"]
       if tostring(k):match "[^%a_]" then
-        k = '["' .. tostring(k) .. '"]'
+        k = '[' .. tostring(k) .. ']'
       end
       limit = r_inspect_settings(v, limit, separator .. "." .. tostring(k))
       if limit < 0 then
